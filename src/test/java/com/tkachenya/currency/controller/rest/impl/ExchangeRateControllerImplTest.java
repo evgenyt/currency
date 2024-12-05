@@ -59,7 +59,7 @@ class ExchangeRateControllerImplTest {
     void testGetExchangeRatesWhenRatesAreFound() throws Exception {
         var baseCode = "USD";
         int daysCount = 7;
-        var startDate = LocalDate.now();
+        var startDate = LocalDate.parse("2024-12-05");
         var endDate = startDate.minusDays(daysCount);
 
         var rate1 = new ExchangeRateDto();
@@ -80,8 +80,10 @@ class ExchangeRateControllerImplTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].date", is("2024-12-05")))
                 .andExpect(jsonPath("$[0].code", is("EUR")))
                 .andExpect(jsonPath("$[0].rate", is(1.12)))
+                .andExpect(jsonPath("$[1].date", is("2024-12-05")))
                 .andExpect(jsonPath("$[1].code", is("GBP")))
                 .andExpect(jsonPath("$[1].rate", is(0.89)));
     }
