@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: demo
+
+  application:
+    name: currency
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    generate-ddl: false
+    open-in-view: false
+
+  datasource:
+    driver-class-name: 'org.postgresql.Driver'
+    url: 'jdbc:postgresql://localhost:5432/curDb'
+    username: 'postgres'
+    password: '12345'
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true

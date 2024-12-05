@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Currency application</title>
+</head>
+<body>
+    <main>
+        <h2>Валюты</h2>
+        <table id="currencies">
+            <thead>
+            <tr>
+                <th>Код</th>
+                <th>Описание</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <label for="daysCount">Количество дней не считая текущего</label><input type="number" id="daysCount" value="0" />
+
+        <h2>Курсы валют для <i id="currentCurrency"></i></h2>
+        <table id="exchangeRates">
+            <thead>
+            <tr>
+                <th>Дата</th>
+                <th>Код</th>
+                <th>Значение</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+</body>
+
+<script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+<script src="/static/js/index.js"></script>
+</html>
